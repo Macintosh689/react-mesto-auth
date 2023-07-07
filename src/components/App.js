@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { CurrentUserContext } from "./contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup";
 import AddPlacePopup from "./AddPlacePopup";
-import { api } from "../utils/Api";
+import Api, { api } from "../utils/Api";
 import EditAvatarPopup from "./EditAvatarPopup";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import SignUp from "./Register";
@@ -38,6 +38,14 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
 
   const navigate = useNavigate();
+
+  const api = new Api({
+    baseUrl: "https://api.macintosh689.nomoredomains.work",
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+      "Content-Type": "application/json",
+    },
+  });
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");

@@ -1,4 +1,4 @@
- class Api {
+ export default class Api {
   constructor(options) {
     this._baseUrl = options.baseUrl;
     this._headers = options.headers;
@@ -80,11 +80,4 @@
     });
   }
 }
-
-export const api = new Api({
-  baseUrl: "https://api.macintosh689.nomoredomains.work",
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem('jwt')}`,
-    "Content-Type": "application/json",
-  },
-});
+ 
