@@ -56,18 +56,14 @@ function App() {
   }, []);
 
   useEffect(() => {
-    api
-      .getUserInfo()
-      .then((data) => {
-        setCurrentUser(data);
+    Promise.all([api.getUserInfo(), api.getAllCards()])
+      .then(([user, cards]) => {
+        setCurrentUser(user);
+        setCards(cards);
       })
-      .catch((err) => console.log(err));
-    api
-      .getAllCards()
-      .then((data) => {
-        setCards(data);
-      })
-      .catch((err) => console.log(err));
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   function handleCardClick(card) {

@@ -82,7 +82,7 @@
 }
 
 export const api = new Api({
-  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-62",
+  baseUrl: "api.macintosh689.nomoredomains.work",
   headers: {
     Authorization: "2ade9657-6571-4ddf-bd29-0da603d3f330",
     "Content-Type": "application/json",
