@@ -82,7 +82,7 @@
 }
 
 export const api = new Api({
-  baseUrl: "api.macintosh689.nomoredomains.work",
+  baseUrl: "https://api.macintosh689.nomoredomains.work",
   headers: {
     Authorization: `Bearer ${localStorage.getItem('jwt')}`,
     "Content-Type": "application/json",

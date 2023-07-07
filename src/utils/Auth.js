@@ -47,5 +47,5 @@ class Auth {
 }
 
 export const auth = new Auth({
-  baseUrl: "api.macintosh689.nomoredomains.work/",
+  baseUrl: "https://api.macintosh689.nomoredomains.work/",
 });
